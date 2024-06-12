@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <section class="flex justify-center">
+      <!-- nested forms are not allowed -->
+
+      <form
+        oninput="result.value=parseInt(range.value)"
+        class="border bg-blue-100 rounded-xl w-[800px] my-5 p-5"
+      >
+        <!-- you can have multiple fieldset  -->
+        <fieldset>
+          <legend class="text-lg uppercase font-bold mb-4">
+            Start Your Project
+          </legend>
+
+          <div class="flex space-">
+            <!-- Personal Information -->
+            <fieldset>
+              <legend>Personal Information</legend>
+
+              <div class="mb-3">
+                <label for="firstName" class="capitalize">First Name:</label>
+                <input
+                  id="firstName"
+                  type="text"
+                  name="firstName"
+                  placeholder="First Name"
+                  class="border"
+                  required
+                />
+              </div>
+
+              <div>
+                <label for="lastName">Last Name</label>
+                <input
+                  id="lastName"
+                  type="text"
+                  name="lastName"
+                  placeholder="Last Name"
+                  required
+                />
+              </div>
+
+              <div>
+                <label for="inputAge">Age</label>
+                <input
+                  type="number"
+                  id="inputAge"
+                  value="24"
+                  min="20"
+                  max="50"
+                />
+              </div>
+
+              <div>
+                <label for="inputEmailAddress">Email Address</label>
+                <input
+                  type="email"
+                  id="inputEmailAddress"
+                  name="inputEmailAddress"
+                  placeholder="Email Address"
+                  required
+                />
+              </div>
+
+              <div>
+                <label for="inputPassword">Password</label>
+                <input
+                  type="password"
+                  id="inputPassword"
+                  name="inputPassword"
+                  placeholder="Enter password"
+                  required
+                />
+              </div>
+
+              <div>
+                <label for="inputMessage">Message</label>
+                <textarea
+                  id="inputMessage"
+                  name="inputMessage"
+                  placeholder="Message"
+                  required
+                ></textarea>
+              </div>
+            </fieldset>
+
+            <!-- Contact Information -->
+            <fieldset>
+              <legend>Contact Information</legend>
+
+              <div>
+                <label for="phone"> Enter your phone number:<br /> </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  pattern="[0-9]{11}"
+                  required
+                />
+              </div>
+
+              <div class="">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required />
+              </div>
+
+              <div class="">
+                <label for="city">City</label>
+                <input type="city" id="city" name="city" required />
+              </div>
+              <div class="">
+                <label for="zip">Zip Code </label>
+                <input type="zip" id="zip" name="zip" required />
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="flex">
+            <!-- Radio group  -->
+            <fieldset>
+              <legend>Choose your favorite language:</legend>
+              <input type="radio" id="html" name="fav_language" value="HTML" />
+              <label for="html">HTML</label><br />
+              <input type="radio" id="css" name="fav_language" value="CSS" />
+              <label for="css">CSS</label><br />
+              <input
+                type="radio"
+                id="javascript"
+                name="fav_language"
+                value="JavaScript"
+              />
+              <label for="javascript">JavaScript</label>
+            </fieldset>
+
+            <!-- Checkbox  group  -->
+            <fieldset>
+              <legend>Skills</legend>
+              <input type="checkbox" id="graphicdesign" name="" />
+              <label for="graphicdesign">Graphics Design</label><br />
+              <input type="checkbox" id="webdesign" name="" />
+              <label for="webdesign">Web Design</label><br />
+              <input type="checkbox" id="digitalmarketing" name="" />
+              <label for="digitalmarketing">Digital Marketing</label
+              ><br /><br />
+            </fieldset>
+          </div>
+          <!-- Other input fields  -->
+          <fieldset>
+            <legend>Other Input fields:</legend>
+
+            <!-- color -->
+            <div>
+              <label for="color">Color:</label>
+              <input
+                type="color"
+                id="color"
+                name="color-code"
+                value="#957EE7"
+              />
+            </div>
+
+            <!-- month -->
+            <div>
+              <label for="inputMonth">Enter Date:</label>
+              <input
+                type="month"
+                id="inputMonth"
+                name="inputMonth"
+                min="2018-03"
+                value="2018-05"
+              />
+            </div>
+
+            <div>
+              <label for="camp-week">Choose a week in May or June:</label>
+              <input
+                type="week"
+                name="week"
+                id="camp-week"
+                min="2024-W18"
+                max="2024-W26"
+                required
+              />
+            </div>
+
+            <!-- date -->
+            <div>
+              <label for="date">Enter Date:</label>
+              <input
+                type="date"
+                id="date"
+                name="date"
+                value="2018-07-22"
+                min="2018-01-01"
+                max="2018-12-31"
+              />
+            </div>
+
+            <!-- time  -->
+            <div>
+              <label for="appt">Choose a time for your meeting:</label>
+              <input
+                type="time"
+                id="appt"
+                name="appt"
+                min="09:00"
+                max="18:00"
+                required
+              />
+            </div>
+
+            <!-- datetime-local  -->
+            <div>
+              <label for="meeting-time"
+                >Choose a time for your appointment:</label
+              >
+              <input
+                type="datetime-local"
+                id="meeting-time"
+                name="meeting-time"
+                value="2018-06-12T19:30"
+                min="2018-06-07T00:00"
+                max="2018-06-14T00:00"
+              />
+            </div>
+
+            <!-- file - image -->
+            <div>
+              <label for="avatar">Choose a profile picture:</label>
+              <input
+                type="file"
+                id="avatar"
+                name="avatar"
+                accept="image/png, image/jpeg"
+              />
+            </div>
+
+            <!-- file  -->
+            <div>
+              <label for="file">Choose a file:</label>
+              <input type="file" id="file" name="file" />
+            </div>
+
+            <!-- input type=image  is used to create graphical submit button  -->
+            <input
+              type="image"
+              width="100"
+              id="image"
+              name="image"
+              src="https://t3.ftcdn.net/jpg/04/54/09/98/240_F_454099801_32LqElT2W1vgRQ6YRsp3h2IsKQxTCnaG.jpg"
+            />
+
+            <input type="hidden" /><br />
+
+            <div>
+              <label for="url">Enter an https:// URL:</label>
+              <input
+                type="url"
+                name="url"
+                id="url"
+                placeholder="https://example.com"
+                pattern="https://.*"
+                size="30"
+                required
+              />
+            </div>
+
+            <!-- range -->
+            <div>
+              <input
+                type="range"
+                id="range"
+                name="range"
+                min="-10"
+                value="0"
+                max="10"
+              />
+              <output name="result" for="range">0</output>
+            </div>
+
+            <div>
+              <input
+                type="range"
+                id="range2"
+                name="range2"
+                min="-10"
+                value="0"
+                max="10"
+                list="values"
+              />
+              <output name="result2" id="value">0</output>
+              <datalist id="values">
+                <option value="-10" label="-10"></option>
+                <option value="-5" label="-5"></option>
+                <option value="0" label="0"></option>
+                <option value="5" label="5"></option>
+                <option value="10" label="10"></option>
+              </datalist>
+            </div>
+
+            <div>
+              <label for="site-search">Search the site:</label>
+              <input type="search" id="site-search" name="q" />
+
+              <button>Search</button>
+            </div>
+          </fieldset>
+
+          <!-- input buttons  -->
+          <div>
+            <input type="submit" value="Submit" />
+            <input type="reset" value="Reset all" />
+          </div>
+
+          <!--  buttons  -->
+          <div>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+
+    <script>
+      //  js code for range slide
+      const value = document.querySelector("#value");
+      const input = document.querySelector("#range2");
+      value.textContent = input.value;
+      input.addEventListener("input", (event) => {
+        value.textContent = event.target.value;
+      });
+    </script>
+  </body>
+</html>
