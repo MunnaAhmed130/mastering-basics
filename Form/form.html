@@ -10,219 +10,423 @@
   <body>
     <section class="flex justify-center">
       <!-- nested forms are not allowed -->
-
       <form
         oninput="result.value=parseInt(range.value)"
-        class="border bg-blue-100 rounded-xl w-[800px] my-5 p-5"
+        class="border-2 border-black rounded-xl shadow-lg shadow-neutral-300 w-[800px] my-10 py-7 px-10"
       >
         <!-- you can have multiple fieldset  -->
         <fieldset>
-          <legend class="text-lg uppercase font-bold mb-4">
+          <legend class="text-2xl uppercase font-bold mb-4">
             Start Your Project
           </legend>
 
-          <div class="flex space-">
+          <div class="flex justify-between">
             <!-- Personal Information -->
-            <fieldset>
-              <legend>Personal Information</legend>
+            <fieldset class="my-2 w-[45%]">
+              <legend class="text-lg font-bold uppercase mb-5">
+                Personal Information
+              </legend>
 
-              <div class="mb-3">
-                <label for="firstName" class="capitalize">First Name:</label>
+              <div>
+                <label
+                  for="firstName"
+                  class="capitalize font-medium text-lg text-neutral-900 block"
+                  >First Name:</label
+                >
                 <input
                   id="firstName"
                   type="text"
                   name="firstName"
                   placeholder="First Name"
-                  class="border"
+                  class="border-2 border-black w-full px-3 py-2 my-3 focus-visible:outline"
                   required
                 />
               </div>
 
               <div>
-                <label for="lastName">Last Name</label>
+                <label
+                  for="lastName"
+                  class="capitalize font-medium text-lg text-neutral-900 block"
+                  >Last Name:</label
+                >
                 <input
                   id="lastName"
                   type="text"
                   name="lastName"
+                  class="border-2 border-black w-full px-3 py-2 my-3 focus-visible:outline"
                   placeholder="Last Name"
                   required
                 />
               </div>
 
               <div>
-                <label for="inputAge">Age</label>
+                <label
+                  for="inputAge"
+                  class="capitalize font-medium text-lg text-neutral-900"
+                  >Age:</label
+                >
                 <input
                   type="number"
                   id="inputAge"
-                  value="24"
+                  placeholder="25"
+                  class="border-2 border-black px-3 py-1 my-3 focus-visible:outline"
                   min="20"
-                  max="50"
+                  max="70"
+                />
+              </div>
+            </fieldset>
+
+            <!-- Contact Information -->
+
+            <fieldset class="my-2 w-[45%]">
+              <legend class="text-lg uppercase font-bold mb-4">
+                Contact Information
+              </legend>
+
+              <div>
+                <label
+                  for="phone"
+                  class="capitalize font-medium text-lg text-neutral-900 block"
+                >
+                  Phone number:
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Phone Number"
+                  class="w-full border-2 border-black px-3 py-2 my-3 focus-visible:outline"
+                  pattern="[0-9]{11}"
+                  required
                 />
               </div>
 
               <div>
-                <label for="inputEmailAddress">Email Address</label>
+                <label
+                  for="address"
+                  class="capitalize font-medium text-lg text-neutral-900 block"
+                  >Address:</label
+                >
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  placeholder="Address"
+                  class="w-full border-2 border-black px-3 py-2 my-3 focus-visible:outline"
+                  required
+                />
+              </div>
+
+              <div class="flex justify-between items-center">
+                <label
+                  for="city"
+                  class="capitalize font-medium text-lg text-neutral-900"
+                >
+                  City:
+                </label>
+                <input
+                  type="city"
+                  id="city"
+                  name="city"
+                  placeholder="City"
+                  class="border-2 border-black px-3 py-1 my-3 ms-auto focus-visible:outline"
+                  required
+                />
+              </div>
+
+              <div class="flex justify-between items-center">
+                <label
+                  for="zip"
+                  class="capitalize font-medium text-lg text-neutral-900"
+                >
+                  Zip Code:
+                </label>
+                <input
+                  type="zip"
+                  id="zip"
+                  name="zip"
+                  placeholder="Zip"
+                  class="items-end border-2 border-black px-3 py-1 my-3 ms-auto focus-visible:outline"
+                  required
+                />
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="flex justify-between mt-4">
+            <fieldset class="w-[45%]">
+              <legend class="text-lg font-bold uppercase mb-5">
+                Send us a message
+              </legend>
+              <div>
+                <label
+                  for="inputEmailAddress"
+                  class="capitalize font-medium text-lg text-neutral-900 block"
+                >
+                  Email Address:
+                </label>
                 <input
                   type="email"
                   id="inputEmailAddress"
                   name="inputEmailAddress"
+                  class="w-full border-2 border-black px-3 py-2 my-3 focus-visible:outline"
                   placeholder="Email Address"
                   required
                 />
               </div>
 
               <div>
-                <label for="inputPassword">Password</label>
+                <label
+                  for="inputPassword"
+                  class="capitalize font-medium text-lg text-neutral-900 block"
+                >
+                  Password:
+                </label>
                 <input
                   type="password"
                   id="inputPassword"
                   name="inputPassword"
+                  class="w-full border-2 border-black px-3 py-2 my-3 focus-visible:outline"
                   placeholder="Enter password"
                   required
                 />
               </div>
 
               <div>
-                <label for="inputMessage">Message</label>
+                <label
+                  for="inputMessage"
+                  class="capitalize font-medium text-lg text-neutral-900 block"
+                >
+                  Message:
+                </label>
                 <textarea
                   id="inputMessage"
                   name="inputMessage"
                   placeholder="Message"
+                  class="w-full border-2 border-black px-3 py-2 my-3 focus-visible:outline"
                   required
                 ></textarea>
               </div>
             </fieldset>
 
-            <!-- Contact Information -->
-            <fieldset>
-              <legend>Contact Information</legend>
+            <fieldset class="w-[45%]">
+              <legend class="text-lg font-bold uppercase mb-5">
+                Multiple Choice Questions
+              </legend>
+              <!-- Radio group  -->
+              <fieldset class="mb-5 mt-2">
+                <legend
+                  class="capitalize font-medium text-lg text-neutral-900 block mb-2"
+                >
+                  Choose your favorite language:
+                </legend>
 
-              <div>
-                <label for="phone"> Enter your phone number:<br /> </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  pattern="[0-9]{11}"
-                  required
-                />
-              </div>
+                <div class="mb-1">
+                  <input
+                    type="radio"
+                    class="accent-black"
+                    id="html"
+                    name="fav_language"
+                    value="HTML"
+                  />
+                  <label
+                    for="html"
+                    class="capitalize font-medium text-neutral-900 mb-2 ms-3"
+                  >
+                    HTML
+                  </label>
+                </div>
 
-              <div class="">
-                <label for="address">Address</label>
-                <input type="text" id="address" name="address" required />
-              </div>
+                <div class="mb-1">
+                  <input
+                    type="radio"
+                    id="css"
+                    name="fav_language"
+                    class="accent-black"
+                    value="CSS"
+                  />
+                  <label
+                    for="css"
+                    class="capitalize font-medium text-neutral-900 mb-2 ms-3"
+                  >
+                    CSS
+                  </label>
+                </div>
 
-              <div class="">
-                <label for="city">City</label>
-                <input type="city" id="city" name="city" required />
-              </div>
-              <div class="">
-                <label for="zip">Zip Code </label>
-                <input type="zip" id="zip" name="zip" required />
-              </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="javascript"
+                    name="fav_language"
+                    class="accent-black"
+                    value="JavaScript"
+                  />
+                  <label
+                    for="javascript"
+                    class="capitalize font-medium text-neutral-900 mb-2 ms-3"
+                    >JavaScript</label
+                  >
+                </div>
+              </fieldset>
+
+              <!-- Checkbox  group  -->
+              <fieldset>
+                <legend
+                  class="capitalize font-medium text-lg text-neutral-900 block mb-2"
+                >
+                  Choose your Skills:
+                </legend>
+                <div class="mb-1">
+                  <input
+                    type="checkbox"
+                    id="graphic-design"
+                    name="graphic-design"
+                    class="accent-black"
+                  />
+                  <label
+                    for="graphic-design"
+                    class="capitalize font-medium text-neutral-900 mb-2 ms-3"
+                    >Graphics Design</label
+                  ><br />
+                </div>
+
+                <div class="mb-1">
+                  <input
+                    type="checkbox"
+                    id="web-design"
+                    name="web-design"
+                    class="accent-black"
+                  />
+                  <label
+                    for="web-design"
+                    class="capitalize font-medium text-neutral-900 mb-2 ms-3"
+                    >Web Design</label
+                  >
+                </div>
+
+                <div>
+                  <input
+                    type="checkbox"
+                    id="digital-marketing"
+                    name="digital-marketing"
+                    class="accent-black"
+                  />
+                  <label
+                    for="digital-marketing"
+                    class="capitalize font-medium text-neutral-900 mb-2 ms-3"
+                  >
+                    Digital Marketing
+                  </label>
+                </div>
+              </fieldset>
             </fieldset>
           </div>
 
-          <div class="flex">
-            <!-- Radio group  -->
-            <fieldset>
-              <legend>Choose your favorite language:</legend>
-              <input type="radio" id="html" name="fav_language" value="HTML" />
-              <label for="html">HTML</label><br />
-              <input type="radio" id="css" name="fav_language" value="CSS" />
-              <label for="css">CSS</label><br />
-              <input
-                type="radio"
-                id="javascript"
-                name="fav_language"
-                value="JavaScript"
-              />
-              <label for="javascript">JavaScript</label>
-            </fieldset>
-
-            <!-- Checkbox  group  -->
-            <fieldset>
-              <legend>Skills</legend>
-              <input type="checkbox" id="graphicdesign" name="" />
-              <label for="graphicdesign">Graphics Design</label><br />
-              <input type="checkbox" id="webdesign" name="" />
-              <label for="webdesign">Web Design</label><br />
-              <input type="checkbox" id="digitalmarketing" name="" />
-              <label for="digitalmarketing">Digital Marketing</label
-              ><br /><br />
-            </fieldset>
-          </div>
           <!-- Other input fields  -->
-          <fieldset>
-            <legend>Other Input fields:</legend>
+          <fieldset class="mt-4">
+            <legend class="text-lg font-bold uppercase mb-5">
+              Other Input fields
+            </legend>
 
             <!-- color -->
-            <div>
-              <label for="color">Color:</label>
-              <input
-                type="color"
-                id="color"
-                name="color-code"
-                value="#957EE7"
-              />
+            <div class="flex items-center">
+              <label
+                for="color"
+                class="capitalize font-medium text-lg text-neutral-900 w-1/2"
+              >
+                Color
+              </label>
+
+              <span class="me-2">:</span>
+              <div>
+                <input type="color" id="color" name="color-code" value="#000" />
+              </div>
             </div>
 
             <!-- month -->
-            <div>
-              <label for="inputMonth">Enter Date:</label>
+            <div class="flex items-center">
+              <label
+                for="inputMonth"
+                class="capitalize font-medium text-lg text-neutral-900 w-1/2"
+              >
+                Enter Date
+              </label>
+              <span class="me-2">:</span>
               <input
                 type="month"
                 id="inputMonth"
                 name="inputMonth"
                 min="2018-03"
+                class="border-2 border-black px-3 py-2 my-3 focus-visible:outline"
                 value="2018-05"
               />
             </div>
 
-            <div>
-              <label for="camp-week">Choose a week in May or June:</label>
+            <div class="flex items-center">
+              <label
+                for="campWeek"
+                class="capitalize font-medium text-lg text-neutral-900 w-1/2"
+              >
+                Choose a week in May or June
+              </label>
+              <span class="me-2">:</span>
               <input
                 type="week"
                 name="week"
-                id="camp-week"
+                id="campWeek"
                 min="2024-W18"
                 max="2024-W26"
+                class="border-2 border-black px-3 py-2 my-3 focus-visible:outline"
                 required
               />
             </div>
 
             <!-- date -->
-            <div>
-              <label for="date">Enter Date:</label>
+            <div class="flex items-center">
+              <label
+                for="date"
+                class="capitalize font-medium text-lg text-neutral-900 w-1/2"
+                >Enter Date:</label
+              >
+              <span class="me-2">:</span>
               <input
                 type="date"
                 id="date"
                 name="date"
                 value="2018-07-22"
                 min="2018-01-01"
+                class="border-2 border-black px-3 py-2 my-3 focus-visible:outline"
                 max="2018-12-31"
               />
             </div>
 
             <!-- time  -->
-            <div>
-              <label for="appt">Choose a time for your meeting:</label>
+            <div class="flex items-center">
+              <label
+                for="appt"
+                class="capitalize font-medium text-lg text-neutral-900 w-1/2"
+                >Choose a time for your meeting:</label
+              >
+              <span class="me-2">:</span>
               <input
                 type="time"
                 id="appt"
                 name="appt"
                 min="09:00"
                 max="18:00"
+                class="border-2 border-black px-3 py-2 my-3 focus-visible:outline"
                 required
               />
             </div>
 
             <!-- datetime-local  -->
-            <div>
-              <label for="meeting-time"
+            <div class="flex items-center">
+              <label
+                for="meeting-time"
+                class="capitalize font-medium text-lg text-neutral-900 w-1/2"
                 >Choose a time for your appointment:</label
               >
+              <span class="me-2">:</span>
               <input
                 type="datetime-local"
                 id="meeting-time"
@@ -230,39 +434,18 @@
                 value="2018-06-12T19:30"
                 min="2018-06-07T00:00"
                 max="2018-06-14T00:00"
+                class="border-2 border-black px-3 py-2 my-3 focus-visible:outline"
               />
             </div>
 
-            <!-- file - image -->
-            <div>
-              <label for="avatar">Choose a profile picture:</label>
-              <input
-                type="file"
-                id="avatar"
-                name="avatar"
-                accept="image/png, image/jpeg"
-              />
-            </div>
-
-            <!-- file  -->
-            <div>
-              <label for="file">Choose a file:</label>
-              <input type="file" id="file" name="file" />
-            </div>
-
-            <!-- input type=image  is used to create graphical submit button  -->
-            <input
-              type="image"
-              width="100"
-              id="image"
-              name="image"
-              src="https://t3.ftcdn.net/jpg/04/54/09/98/240_F_454099801_32LqElT2W1vgRQ6YRsp3h2IsKQxTCnaG.jpg"
-            />
-
-            <input type="hidden" /><br />
-
-            <div>
-              <label for="url">Enter an https:// URL:</label>
+            <div class="flex items-center">
+              <label
+                for="url"
+                class="capitalize font-medium text-lg text-neutral-900 w-1/2"
+              >
+                Enter an URL
+              </label>
+              <span class="me-2">:</span>
               <input
                 type="url"
                 name="url"
@@ -270,61 +453,139 @@
                 placeholder="https://example.com"
                 pattern="https://.*"
                 size="30"
+                class="border-2 border-black px-3 py-2 my-3 focus-visible:outline"
                 required
               />
             </div>
 
+            <div class="flex justify-between items-center my-7">
+              <!-- file - image -->
+              <div class="w-[45%]">
+                <label
+                  for="avatar"
+                  class="capitalize font-medium text-lg text-neutral-900"
+                >
+                  Choose a profile picture :
+                </label>
+                <input
+                  type="file"
+                  id="avatar"
+                  name="avatar"
+                  class="mt-4"
+                  accept="image/png, image/jpeg"
+                />
+              </div>
+              <!-- file  -->
+              <div class="w-[45%]">
+                <label
+                  for="file"
+                  class="capitalize font-medium text-lg text-neutral-900"
+                >
+                  Choose a file :
+                </label>
+                <input type="file" id="file" name="file" class="mt-4" />
+              </div>
+            </div>
+
+            <!-- hidden -->
+            <input type="hidden" /><br />
+
             <!-- range -->
-            <div>
-              <input
-                type="range"
-                id="range"
-                name="range"
-                min="-10"
-                value="0"
-                max="10"
-              />
-              <output name="result" for="range">0</output>
+            <div class="flex justify-between">
+              <div class="w-[45%]">
+                <input
+                  type="range"
+                  id="range"
+                  name="range"
+                  min="-10"
+                  value="0"
+                  max="10"
+                />
+                <output name="result" for="range">0</output>
+              </div>
+
+              <div class="w-[45%]">
+                <input
+                  type="range"
+                  id="range2"
+                  name="range2"
+                  min="-10"
+                  value="0"
+                  max="10"
+                  list="values"
+                />
+                <output name="result2" id="value">0</output>
+                <datalist id="values">
+                  <option value="-10" label="-10"></option>
+                  <option value="-5" label="-5"></option>
+                  <option value="0" label="0"></option>
+                  <option value="5" label="5"></option>
+                  <option value="10" label="10"></option>
+                </datalist>
+              </div>
             </div>
 
             <div>
+              <label
+                for="site-search"
+                class="capitalize font-medium text-lg text-neutral-900 block"
+              >
+                Search the site :
+              </label>
               <input
-                type="range"
-                id="range2"
-                name="range2"
-                min="-10"
-                value="0"
-                max="10"
-                list="values"
+                type="search"
+                id="site-search"
+                name="site-search"
+                list="search"
+                class="border-2 border-black px-3 py-2 my-3 focus-visible:outline"
               />
-              <output name="result2" id="value">0</output>
-              <datalist id="values">
-                <option value="-10" label="-10"></option>
-                <option value="-5" label="-5"></option>
-                <option value="0" label="0"></option>
-                <option value="5" label="5"></option>
-                <option value="10" label="10"></option>
+              <button class="ms-4 px-4 py-2 bg-black text-white rounded">
+                Search
+              </button>
+              <datalist id="search">
+                <option value="HTML"></option>
+                <option value="CSS"></option>
+                <option value="Javascript"></option>
+                <option value="C++"></option>
+                <option value="Python"></option>
               </datalist>
-            </div>
-
-            <div>
-              <label for="site-search">Search the site:</label>
-              <input type="search" id="site-search" name="q" />
-
-              <button>Search</button>
             </div>
           </fieldset>
 
+          <!-- input type=image  is used to create graphical submit button  -->
+          <input
+            type="image"
+            width="100"
+            id="image"
+            name="image"
+            src="https://t3.ftcdn.net/jpg/04/54/09/98/240_F_454099801_32LqElT2W1vgRQ6YRsp3h2IsKQxTCnaG.jpg"
+          />
+
           <!-- input buttons  -->
           <div>
-            <input type="submit" value="Submit" />
-            <input type="reset" value="Reset all" />
+            <input
+              class="me-4 px-4 py-2 bg-black text-white rounded"
+              type="submit"
+              value="Submit"
+            />
+            <input
+              class="me-4 px-4 py-2 bg-black text-white rounded"
+              type="reset"
+              value="Reset all"
+            />
           </div>
 
           <!--  buttons  -->
-          <div>
-            <button type="submit">Submit</button>
-            <button type="reset">Reset</button>
+          <div class="mt-4">
+            <button
+              class="me-4 px-4 py-2 bg-black text-white rounded"
+              type="submit"
+            >
+              Submit
+            </button>
+            <button class="px-4 py-2 bg-black text-white rounded" type="reset">
+              Reset
+            </button>
           </div>
         </fieldset>
       </form>
