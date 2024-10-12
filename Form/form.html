@@ -10,6 +10,7 @@
   <body>
     <section class="flex justify-center">
       <!-- nested forms are not allowed -->
+      <!-- output.name = result -->
       <form
         oninput="result.value=parseInt(range.value)"
         class="border-2 border-black rounded-xl shadow-lg shadow-neutral-300 w-[800px] my-10 py-7 px-10"
@@ -152,8 +153,8 @@
             </fieldset>
           </div>
 
-          <!-- send message -->
           <div class="flex justify-between mt-4">
+            <!-- send message -->
             <fieldset class="w-[45%]">
               <legend class="text-lg font-bold uppercase mb-5">
                 Send us a message
@@ -192,7 +193,11 @@
                     required
                   />
 
-                  <button id="changePassword" class="bg-black text-white py">
+                  <button
+                    type="button"
+                    id="changePasswordBtn"
+                    class="bg-black text-white py"
+                  >
                     change
                   </button>
                 </div>
@@ -215,6 +220,7 @@
               </div>
             </fieldset>
 
+            <!-- Multiple Choice Questions -->
             <fieldset class="w-[45%]">
               <legend class="text-lg font-bold uppercase mb-5">
                 Multiple Choice Questions
@@ -368,6 +374,7 @@
               />
             </div>
 
+            <!-- week -->
             <div class="flex items-center">
               <label
                 for="campWeek"
@@ -437,13 +444,14 @@
                 type="datetime-local"
                 id="meeting-time"
                 name="meeting-time"
-                value="2018-06-12T19:30"
-                min="2018-06-07T00:00"
-                max="2018-06-14T00:00"
+                value="2024-06-12T19:30"
+                min="2024-06-07T00:00"
+                max="2024-06-14T00:00"
                 class="border-2 border-black px-3 py-2 my-3 focus-visible:outline"
               />
             </div>
 
+            <!-- url -->
             <div class="flex items-center">
               <label
                 for="url"
@@ -534,6 +542,7 @@
               </div>
             </div>
 
+            <!-- search btn with datalist  -->
             <div>
               <label
                 for="site-search"
@@ -570,31 +579,36 @@
             src="https://t3.ftcdn.net/jpg/04/54/09/98/240_F_454099801_32LqElT2W1vgRQ6YRsp3h2IsKQxTCnaG.jpg"
           />
 
-          <!-- input buttons  -->
-          <div>
-            <input
-              class="me-4 px-4 py-2 bg-black text-white rounded"
-              type="submit"
-              value="Submit"
-            />
-            <input
-              class="me-4 px-4 py-2 bg-black text-white rounded"
-              type="reset"
-              value="Reset all"
-            />
-          </div>
+          <div class="flex justify-between">
+            <!-- input buttons  -->
+            <div>
+              <input
+                class="me-4 px-4 py-2 bg-black text-white rounded"
+                type="submit"
+                value="Submit"
+              />
+              <input
+                class="me-4 px-4 py-2 bg-black text-white rounded"
+                type="reset"
+                value="Reset all"
+              />
+            </div>
 
-          <!--  buttons  -->
-          <div class="mt-4">
-            <button
-              class="me-4 px-4 py-2 bg-black text-white rounded"
-              type="submit"
-            >
-              Submit
-            </button>
-            <button class="px-4 py-2 bg-black text-white rounded" type="reset">
-              Reset
-            </button>
+            <!--  buttons  -->
+            <div>
+              <button
+                class="me-4 px-4 py-2 bg-black text-white rounded"
+                type="submit"
+              >
+                Submit
+              </button>
+              <button
+                class="px-4 py-2 bg-black text-white rounded"
+                type="reset"
+              >
+                Reset
+              </button>
+            </div>
           </div>
         </fieldset>
       </form>
@@ -602,22 +616,23 @@
 
     <script>
       //  js code for range slide
-      const value = document.querySelector("#value");
+      const output = document.querySelector("#value");
       const input = document.querySelector("#range2");
-      value.textContent = input.value;
+      // output.textContent = input.value;
+
       input.addEventListener("input", (event) => {
-        value.textContent = event.target.value;
+        output.textContent = event.target.value;
       });
 
       // hide & show password
-      const changePassword = document.querySelector("#changePassword");
+      const changePassword = document.querySelector("#changePasswordBtn");
       changePassword.addEventListener("click", () => {
-        let passwordInput = document.querySelector("#inputPassword");
+        let inputPassword = document.querySelector("#inputPassword");
         // console.log(passwordInput, passwordInput.type);
-        if (passwordInput.type == "password") {
-          passwordInput.type = "text";
+        if (inputPassword.type == "password") {
+          inputPassword.type = "text";
         } else {
-          passwordInput.type = "password";
+          inputPassword.type = "password";
         }
       });
     </script>
